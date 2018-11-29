@@ -4,13 +4,15 @@
     tasks:
       - name: Deploy an instance
         os_server:
-          state: present
           auth:
-            auth_url: http://172.16.5.187/identity/v3
+            auth_url: http://172.16.5.221/identity/v3
             username: admin
             password: secret
-            project_name: admin
+            project_name: test
           name: ubuntu
-          image: c4af8ae9-e07d-4f68-80fb-9034ac0e4823
-          flavor: 1
-          key_name: llave
+          image: 137594ed-4e4f-4805-86a1-41ed8bf5cb8d
+          timeout: 200
+          flavor: 2
+          state: present
+          key_name: PUBKEY
+          auto_ip: yes
